@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var alertIsVisible: Bool = false
+    @State private var alertIsVisible = false
+    @State private var sliderValue = 50.0
+    @State private var game = Game()
+    
     var body: some View {
         VStack {
             Text("🎯🎯🎯\nPUT THE BULLEYE AS CLOSE AS YOU CAN TO")
@@ -17,7 +20,7 @@ struct ContentView: View {
                 .multilineTextAlignment(.center)
                 .lineSpacing(4.0)
                 .font(.footnote)
-            Text("89")
+            Text(String(game.target))
                 .kerning(-1.0)
                 .font(.largeTitle)
                 .fontWeight(.black)
